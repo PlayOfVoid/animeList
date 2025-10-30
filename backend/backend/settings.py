@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lazorn$pu^sf^dswy-ht!6%_+#!*o=b3$kbixt+z8rs2bn^m@8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
