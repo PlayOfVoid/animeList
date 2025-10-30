@@ -10,4 +10,5 @@ urlpatterns = [
     #
     path('register/', anime.register, name='register'),
     path('login/', anime.user_login, name='login'),
+    path('logout/',anime.view_logout,name='log')
 ]

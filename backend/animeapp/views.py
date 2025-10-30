@@ -7,12 +7,14 @@ from .models import Anime
 from .forms import AddAnimeForm
 from django.contrib.auth import login
 from .forms import RegisterForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 # Create your views here.
 def index(request):
     return render(request,'anime/index.html')
 
-
+@login_required
 def animes(request):
     user = request.user
     animes = Anime.objects.filter(user=user)
@@ -73,3 +75,9 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'anime/login.html', {'form': form})
+
+
+
+def view_logout(request):
+    logout(request)
+    return redirect('anime:index')
